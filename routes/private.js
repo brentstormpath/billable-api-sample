@@ -23,7 +23,7 @@ router.post('/charge', function(req, res, next) {
         email: req.user.email
     }, function(err, customer) {
         if (err) return next(err);
-        req.user.customData.subscribed = 'true';
+        req.user.customData.billingTier = customer.subscriptions.data[0].plan;
         req.user.customData.billingProviderId = customer.id;
         req.user.customData.save(function(err) {
             if (err) return next(err);
