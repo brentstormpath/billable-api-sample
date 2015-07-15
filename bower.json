@@ -1,0 +1,31 @@
+{
+  "name": "billable-api-sample",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Brent Jensen <brent@stormpath.com>",
+    "Randall Degges <randall@stormpath.com>"
+  ],
+  "description": "A sample API to demonstrate billing with Stripe + Stormpath",
+  "keywords": [
+    "api",
+    "sample",
+    "billing"
+  ],
+  "license": "UNLICENSE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.4",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.2",
+    "bootswatch": "~3.3.5"
+  }
+}

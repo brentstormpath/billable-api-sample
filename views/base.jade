@@ -1,0 +1,45 @@
+block vars
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title #{siteTitle} - #{title}
+    link(href='/static/bootswatch/sandstone/bootstrap.min.css', rel='stylesheet')
+    link(href='/static/css/main.css', rel='stylesheet')
+    <!--[if lt IE 9]>
+    script(src='/static/html5shiv/dist/html5shiv.min.js')
+    script(src='/static/respond/dest/respond.min.js')
+    <![endif]-->
+  body
+    nav.navbar.navbar-default.navbar-static-top
+      - var nav = {}; nav[title] = 'active'
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') #{siteTitle}
+        #navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li(class='#{nav.Home}')
+              a(href='/') Home
+            li(class='#{nav.Pricing}')
+              a(href='/pricing') Pricing
+            if user
+              li(class='#{nav.Dashboard}')
+                a(href='/dashboard') Dashboard
+              li(class='#{nav.Logout}')
+                a(href='/logout') Logout
+            else
+              li(class='#{nav.Login}')
+                a(href='/login') Login
+              li(class='#{nav.Register} create-account')
+                a(href='/register') Create Account
+    block body
+    script(src='/static/jquery/dist/jquery.min.js')
+    script(src='/static/bootstrap/dist/js/bootstrap.min.js')

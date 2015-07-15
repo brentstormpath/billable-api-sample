@@ -1,0 +1,17 @@
+extends base
+
+block vars
+  - var title = 'Pricing'
+
+block body
+  .container.pricing
+    h1.text-center Pricing
+    .row
+      .col-xs-offset-2.col-xs-8.col-md-offset-4.col-md-4.price-box.text-center
+        h2 #{costPerQuery}Pro
+        p.text-justify.
+          One size fits all. Upgrade to Pro today to get access to the API with unlimited Access!
+    .row
+      .col-xs-offset-2.col-xs-8.col-md-offset-4.col-md-4
+        a(href='/register')
+          button.btn.btn-lg.btn-primary.center-block(type='button') Get Started!

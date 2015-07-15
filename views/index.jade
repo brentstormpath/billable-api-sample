@@ -1,0 +1,15 @@
+extends base
+
+block vars
+  - var title = 'Home'
+
+block body
+  .container.index
+    h1.text-center Add Billing to Your API
+    .row
+      .col-xs-12.col-md-offset-2.col-md-8
+        .jumbotron.text-justify
+          p.
+            #{siteTitle} tells you 'hi' when you need it most. And charges a low fee of $10/mo! Your data is secured with Stormpath User Management and Stripe.
+          a(href='/register')
+            button.btn.btn-lg.btn-primary.center-block(type='button') Get Started!

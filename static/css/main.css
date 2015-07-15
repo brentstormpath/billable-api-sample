@@ -1,0 +1,101 @@
+/*
+ * Navbar settings.
+ */
+ul.nav.navbar-nav {
+  float: right;
+}
+
+li.create-account > a {
+  color: #fff !important;
+}
+
+/*
+ * Index page settings.
+ */
+.index h1 {
+  margin-top: 2em;
+}
+
+.index .jumbotron {
+  margin-top: 4em;
+}
+
+.index button {
+  margin-top: 4em;
+  font-size: 1em;
+}
+
+/*
+ * Dashboard page settings.
+ */
+.dashboard .api-keys {
+  margin-top: 3em;
+}
+
+.dashboard .api-key-container {
+  min-height: 4em;
+}
+
+.dashboard .widgets {
+  margin-top: 4em;
+}
+
+.dashboard .api-key-secret {
+  color: red;
+}
+
+.dashboard h3 {
+  font-size: 1.2em !important;
+}
+
+.dashboard span.api-key-id, .dashboard span.api-key-secret {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin-left: .5em;
+}
+
+.dashboard .left {
+  float: left;
+}
+
+.dashboard .right {
+  float: right;
+}
+
+.dashboard .panel {
+  padding-bottom: 2em;
+}
+
+.dashboard .panel-heading {
+  margin-bottom: 2em;
+}
+
+.dashboard .analytics-content, .dashboard .billing-content {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.dashboard .dashboard .total-queries {
+  font-size: 2em;
+}
+
+.dashboard form {
+  margin-top: 2em;
+}
+
+/*
+ * Pricing page settings.
+ */
+.pricing .price-box {
+  border: 2px solid #f8f5f0;
+  border-radius: 6px;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.pricing h2 {
+  margin-bottom: 1em;
+}
+
+.pricing .end {
+  margin-bottom: 2em;
+}
