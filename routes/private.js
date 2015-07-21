@@ -17,31 +17,31 @@ router.get('/', function(req, res) {
 });
 
 router.post('/charge', function(req, res, next) {
-    stripe.customers.create({
-        source: req.body.stripeToken,
-        plan: 'pro',
-        email: req.user.email
-    }, function(err, customer) {
+  stripe.customers.create({
+    source: req.body.stripeToken,
+    plan: 'pro',
+    email: req.user.email
+  }, function(err, customer) {
+    if (err) return next(err);
+
+    // Add the user to this group.
+    req.app.get('stormpathApplication').getGroups({ name: 'pro' }, function(err, groups) {
+      if (err) return next(err);
+
+      var group = groups.items[0];
+      req.user.addToGroup(group, function(err) {
         if (err) return next(err);
 
-        // Add the user to this group.
-        req.app.get('stormpathApplication').getGroups({ name: 'pro' }, function(err, groups) {
+        // Update the user's plan.
+        req.user.customData.billingTier = customer.subscriptions.data[0].plan;
+        req.user.customData.billingProviderId = customer.id;
+        req.user.customData.save(function(err) {
           if (err) return next(err);
-
-          var group = groups.items[0];
-          req.user.addToGroup(group, function(err) {
-            if (err) return next(err);
-
-            // Update the user's plan.
-            req.user.customData.billingTier = customer.subscriptions.data[0].plan;
-            req.user.customData.billingProviderId = customer.id;
-            req.user.customData.save(function(err) {
-                if (err) return next(err);
-                res.redirect('/dashboard');
-            });
-          });
+          res.redirect('/dashboard');
         });
+      });
     });
+  });
 });
 
 // Exports
