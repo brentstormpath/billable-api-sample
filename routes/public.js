@@ -46,7 +46,6 @@ router.post('/subscription-cancel', function(req, res, next) {
           data.billingTier.id = 'cancelled';
           data.save(function(err) {
             if (err) return next(err);
-
             return res.json();
           });
         });
